@@ -1,0 +1,182 @@
+import java.util.*;
+class Animal {
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+   
+    public String toString() {
+        return "Animal: " + name;
+    }
+}
+
+class Mammal extends Animal {
+    public Mammal(String name) {
+        super(name);
+    }
+
+   
+    public String toString() {
+        return "Mammal: " + super.toString();
+    }
+}
+
+class Cat extends Mammal {
+    public Cat(String name) {
+        super(name);
+    }
+
+ 
+    public String toString() {
+        return "Cat: " + super.toString();
+    }
+   
+    public void greets() {
+        System.out.println(" Meow");
+    }
+}
+
+class Dog extends Mammal {
+    public Dog(String name) {
+        super(name);
+    }
+
+   
+    public String toString() {
+        return "Dog: " + super.toString();
+    }
+
+    public void greets() {
+        System.out.println( " Woof");
+    }
+
+    public void greets(Dog another) {
+        System.out.println("Woooof");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Cat name:");
+        String catname=sc.nextLine();
+        System.out.println("Enter the Dog1 name:");
+        String Dog1=sc.nextLine();
+        System.out.println("Enter the Dog2 name:");
+        String Dog2=sc.nextLine();
+        Animal animal = new Animal("Generic Animal");
+        Mammal mammal = new Mammal("Generic Mammal");
+        Cat cat = new Cat(catname);
+        Dog dog1 = new Dog(Dog1);
+        Dog dog2 = new Dog(Dog2);
+
+        System.out.println(animal);
+        System.out.println(mammal);
+        System.out.println(cat);
+        System.out.println(dog1);
+        System.out.println(dog2);
+
+        cat.greets();
+        dog1.greets();
+        dog1.greets(dog2);
+    }
+}
+OUTPUT 
+Enter the Cat name:
+kitty
+Enter the Dog1 name:
+doggo
+Enter the Dog2 name:
+spikey
+Animal: Generic Animal
+Mammal: Animal: Generic Mammal
+Cat: Mammal: Animal: kitty
+Dog: Mammal: Animal: doggo
+Dog: Mammal: Animal: spikey
+ Meow
+ Woof
+Woooof
+
+
+
+
+package javaapplication3;
+
+/**
+ *
+ * @author 22cseb17
+ */
+import java.util.*;
+public class JavaApplication3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    circle s1=new circle();
+    rectangle s2=new rectangle();
+    shape s;
+    s=s1;
+    System.out.println("area of circle "+s.calculateArea());
+    s=s2;
+    System.out.println("area of rectangle "+s.calculateArea());
+    }
+}
+
+class shape
+{
+    double area;
+    int radii;
+    double l;
+    double b;
+    double h;
+    double calculateArea()
+    {
+    return 0.0;
+    }
+}
+ class circle extends shape
+{
+    double calculateArea()
+    {
+    Scanner obj=new Scanner(System.in);
+    System.out.println("enter radii of circle");
+    radii=obj.nextInt();
+    return 3.14*radii*radii;
+     
+    }
+}
+class rectangle extends shape
+{
+     double calculateArea(){
+    Scanner obj1=new Scanner(System.in);
+    System.out.println("enter length of rectangle");
+    l=obj1.nextDouble();
+    System.out.println("enter breadth of rectangle");
+    b=obj1.nextDouble();
+    System.out.println("enter  height of rectangle");
+    h=obj1.nextDouble();
+    return l*b*h;    
+ }
+}
+ output;
+enter radii of circle
+2
+area of circle 12.56
+enter length of rectangle
+2
+enter breadth of rectangle
+2
+enter  height of rectangle
+2
+area of rectangle 8.0
+BUILD SUCCESSFUL (total time: 5 seconds)
+
+
